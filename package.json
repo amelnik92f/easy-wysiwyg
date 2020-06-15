@@ -1,0 +1,33 @@
+{
+  "name": "easy-wysiwyg",
+  "version": "1.0.0",
+  "author": "Alex Melnik <amelnik92f@gmail.com>",
+  "license": "MIT",
+  "keywords": [],
+  "description": "Simple and lightweight WYSIWYG with no markup storage option",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "browser": "dist/index.min.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "npm run lint --quite --fix"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "prettier": "^2.0.5",
+    "rollup": "^2.16.1",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "typescript": "^3.9.5"
+  }
+}
