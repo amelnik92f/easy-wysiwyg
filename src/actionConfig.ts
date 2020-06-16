@@ -28,8 +28,8 @@ export const actions = [
     title: "Justify Right",
   },
   {
-    action: "indent",
-    title: "Blockquote",
+    action: "justifyFull",
+    title: "Justify Full",
   },
   {
     action: "insertUnorderedList",
@@ -38,6 +38,14 @@ export const actions = [
   {
     action: "insertOrderedList",
     title: "Insert Ordered List",
+  },
+  {
+    action: "subscript",
+    title: "Subscript",
+  },
+  {
+    action: "superscript",
+    title: "Superscript",
   },
   {
     action: "formatBlock",
@@ -75,11 +83,13 @@ export const actions = [
     value: "p",
   },
   {
-    action: "subscript",
-    title: "Subscript",
+    action: "formatBlock",
+    title: "Blockquote",
+    value: "blockquote",
   },
   {
-    action: "superscript",
-    title: "Superscript",
+    action: "formatBlock",
+    title: "Code",
+    value: "pre",
   },
 ];

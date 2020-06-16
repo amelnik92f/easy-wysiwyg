@@ -1,9 +1,13 @@
 import { ButtonMeta } from "./types";
 import { formatText } from "./formatText";
+import styles from "./styles.module.scss";
+
+const { textArea, wrapper } = styles;
 
 export const createMountRoot = (): HTMLElement => {
   const mountRoot = document.createElement("div");
   mountRoot.id = "EWGRoot";
+  mountRoot.className = wrapper;
 
   return mountRoot;
 };
@@ -41,10 +45,20 @@ export const createActionWrapper = (): HTMLElement => {
 
 export const createEditingArea = (): HTMLElement => {
   const editingArea = document.createElement("div");
-  editingArea.className = "EW-editing-area";
+  editingArea.className = textArea;
   editingArea.contentEditable = "true";
+  editingArea.addEventListener("keyup", ({ code, altKey, ctrlKey }) => {
+    if (code === "Enter") {
+      if (altKey) {
+        formatText("removeFormat");
+      }
+      if (ctrlKey) {
+        formatText("formatBlock", "p");
+      }
+    }
+  });
 
-  document.execCommand("defaultParagraphSeparator", false, "p");
+  formatText("defaultParagraphSeparator", "p");
 
   return editingArea;
 };
