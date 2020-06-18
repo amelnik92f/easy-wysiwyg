@@ -2,50 +2,62 @@ export const actions = [
   {
     action: "bold",
     title: "Bold",
+    icon: "bold",
   },
   {
     action: "italic",
     title: "Italic",
+    icon: "italic",
   },
   {
     action: "underline",
     title: "Underline",
+    icon: "underline",
   },
   {
     action: "strikeThrough",
     title: "Strike",
+    icon: "strikethrough",
   },
   {
     action: "justifyLeft",
     title: "Justify Left",
+    icon: "paragraph-left",
   },
   {
     action: "justifyCenter",
     title: "Justify Center",
+    icon: "paragraph-center",
   },
   {
     action: "justifyRight",
     title: "Justify Right",
+    icon: "paragraph-right",
   },
   {
     action: "justifyFull",
     title: "Justify Full",
+    icon: "paragraph-justify",
   },
   {
     action: "insertUnorderedList",
     title: "Insert Unordered List",
+    icon: "list2",
   },
   {
     action: "insertOrderedList",
     title: "Insert Ordered List",
+    icon: "list-numbered",
   },
   {
     action: "subscript",
     title: "Subscript",
+    icon: "subscript",
   },
   {
     action: "superscript",
     title: "Superscript",
+    icon: "superscript",
   },
   {
     action: "formatBlock",

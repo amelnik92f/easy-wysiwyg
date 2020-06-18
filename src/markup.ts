@@ -1,13 +1,18 @@
 import { ButtonMeta } from "./types";
 import { formatText } from "./formatText";
-import styles from "./styles.module.scss";
+import styles from "./styles/markup.module.scss";
 
-const { textArea, wrapper } = styles;
+const {
+  textArea,
+  wrapper,
+  editButton,
+  actionWrapper: actionWrapperCx,
+} = styles;
 
 export const createMountRoot = (): HTMLElement => {
   const mountRoot = document.createElement("div");
   mountRoot.id = "EWGRoot";
-  mountRoot.className = wrapper;
+  mountRoot.className = `EWG-root ${wrapper}`;
 
   return mountRoot;
 };
@@ -16,12 +21,23 @@ export const createButton = ({
   title,
   action,
   value,
+  icon,
 }: ButtonMeta): HTMLButtonElement => {
   const button = document.createElement("button");
 
-  button.innerText = title;
+  button.className = editButton;
   button.dataset.action = action;
-  button.dataset.value = value;
+  button.title = title;
+
+  if (value) {
+    button.dataset.value = value;
+  }
+
+  if (icon) {
+    button.classList.add(`ewg-icon-${icon}`);
+  } else {
+    button.innerText = title;
+  }
 
   return button;
 };
@@ -29,7 +45,7 @@ export const createButton = ({
 export const createActionWrapper = (): HTMLElement => {
   const actionWrapper = document.createElement("div");
 
-  actionWrapper.className = "EW-action-wrapper";
+  actionWrapper.className = actionWrapperCx;
 
   actionWrapper.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
