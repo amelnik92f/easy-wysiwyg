@@ -96,12 +96,25 @@ export const actions = [
   },
   {
     action: "formatBlock",
-    title: "Blockquote",
+    title: "Quote",
     value: "blockquote",
   },
   {
     action: "formatBlock",
     title: "Code",
     value: "pre",
+  },
+  {
+    action: "createLink",
+    title: "Link",
+    value:
+      "https://pixabay.com/get/53e3d5404850ad14f1dc8460da2932771739dee05b5876_640.jpg",
+  },
+  {
+    action: "insertImage",
+    title: "Link",
+    icon: "image",
+    value:
+      "https://pixabay.com/get/53e3d5404850ad14f1dc8460da2932771739dee05b5876_640.jpg",
   },
 ];

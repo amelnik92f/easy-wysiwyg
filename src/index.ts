@@ -1,27 +1,23 @@
-import {
-  createActionWrapper,
-  createButton,
-  createEditingArea,
-  createMountRoot,
-} from "./markup";
-import { actions } from "./actionConfig";
-
-import "./styles/index.scss";
+import { ActionWrapper, Button, EditingArea, Root } from "./components";
+import { actions, setup } from "./core";
+import "./styles";
 
 export const createEWG = (): HTMLElement => {
-  const mountRoot = createMountRoot();
+  const mountRoot = Root();
 
-  const actionWrapper = createActionWrapper();
+  const actionWrapper = ActionWrapper();
 
-  const editingArea = createEditingArea();
+  const editingArea = EditingArea();
 
   actions.forEach((data) => {
-    const btn = createButton(data);
+    const btn = Button(data);
     actionWrapper.appendChild(btn);
   });
 
   mountRoot.appendChild(actionWrapper);
   mountRoot.appendChild(editingArea);
+
+  setup();
 
   return mountRoot;
 };

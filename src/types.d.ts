@@ -3,4 +3,5 @@ export type ButtonMeta = {
   action: string;
   value?: string;
   icon?: string;
+  onClick?: (ev: MouseEvent) => void;
 };
