@@ -1,5 +1,6 @@
-import { formatText } from "../../core";
 import styles from "./styles.module.scss";
+import { eventsToSubscribe } from "../../core/communicate";
+import { FormatButtonWrapper } from "../FormatButtonWrapper";
 
 const { actionWrapper: actionWrapperCx } = styles;
 
@@ -8,13 +9,9 @@ export const ActionWrapper = (): HTMLElement => {
 
   actionWrapper.className = actionWrapperCx;
 
-  actionWrapper.addEventListener("click", (event) => {
-    const target = event.target as HTMLElement;
-    const { action, value } = target.dataset;
-
-    if (action) {
-      formatText(action, value);
-    }
+  eventsToSubscribe.forEach((event) => {
+    const container = FormatButtonWrapper(event);
+    actionWrapper.appendChild(container);
   });
 
   return actionWrapper;

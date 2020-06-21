@@ -1,7 +1,13 @@
-import { formatText } from "../../core";
+import { format } from "../../core";
 import styles from "./styles.module.scss";
 
 const { textArea } = styles;
+
+// "format/text" - b, i, u, s, x1, x2
+// "format/align" - 4 aligns
+// "format/createElement" - p, h1-h6, quote, code, Link, image, video?
+// "modal/open"
+// "modal/close"
 
 export const EditingArea = (): HTMLElement => {
   const editingArea = document.createElement("div");
@@ -15,15 +21,15 @@ export const EditingArea = (): HTMLElement => {
       const tagName = selection?.focusNode?.nodeName;
 
       if (tagName === "BLOCKQUOTE" || tagName === "PRE") {
-        formatText("formatBlock", "p");
+        format("formatBlock", "p");
       }
 
       if (altKey) {
-        formatText("removeFormat");
+        format("removeFormat");
       }
 
       if (ctrlKey) {
-        formatText("formatBlock", "p");
+        format("formatBlock", "p");
       }
     }
   });

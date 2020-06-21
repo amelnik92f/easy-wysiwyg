@@ -8,9 +8,11 @@
   align-items: center;
   justify-content: center;
   transition: 0.25s;
+
   &:hover {
     background: hsl(214, 100%, 90%);
   }
+
   &:focus {
     outline: none;
     box-shadow: hsl(214, 100%, 90%) 0 0 10px 0;

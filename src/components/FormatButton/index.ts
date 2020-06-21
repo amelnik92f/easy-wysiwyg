@@ -1,24 +1,20 @@
-import { ButtonMeta } from "../../types";
+import { FormatButtonMeta } from "../../types";
 import styles from "./styles.module.scss";
+import { pubSub } from "../../core/communicate";
 
 const { editButton } = styles;
 
-export const Button = ({
+export const FormatButton = ({
   title,
   action,
-  value,
   icon,
-  onClick,
-}: ButtonMeta): HTMLButtonElement => {
+  event,
+}: FormatButtonMeta): HTMLButtonElement => {
   const button = document.createElement("button");
 
   button.className = editButton;
-  button.dataset.action = action;
-  button.title = title;
 
-  if (value) {
-    button.dataset.value = value;
-  }
+  button.title = title;
 
   if (icon) {
     button.classList.add(`ewg-icon-${icon}`);
@@ -26,9 +22,9 @@ export const Button = ({
     button.innerText = title;
   }
 
-  if (onClick) {
-    button.addEventListener("click", onClick);
-  }
+  button.addEventListener("click", () => {
+    pubSub.publish(event, { type: action });
+  });
 
   return button;
 };

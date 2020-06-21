@@ -1,5 +1,6 @@
-import { ActionWrapper, Button, EditingArea, Root } from "./components";
-import { actions, setup } from "./core";
+import { ActionWrapper, EditingArea, Root } from "./components";
+import { setup } from "./utils";
+
 import "./styles";
 
 export const createEWG = (): HTMLElement => {
@@ -8,11 +9,6 @@ export const createEWG = (): HTMLElement => {
   const actionWrapper = ActionWrapper();
 
   const editingArea = EditingArea();
-
-  actions.forEach((data) => {
-    const btn = Button(data);
-    actionWrapper.appendChild(btn);
-  });
 
   mountRoot.appendChild(actionWrapper);
   mountRoot.appendChild(editingArea);

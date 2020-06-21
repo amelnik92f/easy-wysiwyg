@@ -14,11 +14,12 @@ $icon-paragraph-center: "\ea78";
 $icon-paragraph-right: "\ea79";
 $icon-paragraph-justify: "\ea7a";
 $icon-image: "\e90d";
-
+$icon-link: "\e9cb";
+$icon-film: "\e913";
 
 @font-face {
   font-family: '#{$icon-font-family}';
-  src: url('data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAS0AA0AAAAAC5QAAARcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GYACDBhEICosMiEgLJgABNgIkAzAEIAWCaweBPRtBCcieBU7ZdKKeRWvNhxCJ5qVvqCL48mfZb+bri+BMBDISj7IDigwRQ+RytJsZM8J496qcOXTp+rXfHvgd7umLOeZRXB4DIXkT91C+WMNC9Eb+NwF1DDB5vKuxVt/2zSQ0C+1bEsfEGvMJs86QRCuExDVUklgnVA0JekQBPZsU9IQT/nbuTgj46a09veCP8YTTeetAD1sgCWEsVEjI+a/YCA3SKy7fY4Owm9jk0GhzgsUIcgpbfjovzjXNlAABHHcSyO+1nQBFFthO5VZgMyNZJey01F/6cul6uWq5frl//j/Qoy9frlvu+Rvztvjb4rCM0LXQ5dBZyMJm+NtDJmoiA5GQZvxnVHDfEHOGYAJ2wyHEpyBti7eoAIEQKrValoSQJA0/lakej3vNSlz3ehWm57Flu71T1TuhF6giRuczs9GodewI20SPY7T6Rl1uu+M196173HUuLUZ8tRmbWYg1pqIRds1VxBW3+Bs00HB56oTfcB2C7XFFdKJLygkanhkapJ/z9MxBrLFB+RFfbXcpb9zxqQObMfbskiu8V/fXSK8dzH1sZq8ebOlc1cnGsw90U2EdWFO+xlenfWs/5AjL3VQO9960EWsc1O3juHVo8Az8zq5edO/pBLPeX6ZIdrOJIYo7O9Yt8xDYzI4Pov/izBbNpplDeb8fnfJbG3Q6q1ZbYcJim7jn0D5+aefSy/HLLiWuuIy4/IE+7+t7mytMHHI6l+kUYpu5l7W9r4abvG+fFYRoOS5PebmFg8u0RBVGARNp38gLqYdk3ECZDOifkfmJvdx74QWECu61sGC6qJoqfQ8prJ544Vgp/W8zt/jLReQyN1TbPj08LY0fLiTdPh88//75jvlM/gnHn6a3fByuQujwjx8KlFxx+OnajgF9FUU6JRQOJ1fPjbwKr+4nr4WwP9ByQa8dNzZ++XnTayefvDad7jM+dtwCem2H9e4vUrYh7YVrnXe/G/d/Q0HFUbmoivK/tKhXUIW+z6aMzVVJ/MNu+vzswV0VJ7Dg4NMeyEe8tvSsLGTx0iGg2i/gEF3jn7KTtClhD+afm8Y/mlZee5SV80QeGvYlUG5vUUxPYsYUQtFRunCiHMpGmMQXfF+YbRpyQIgv3yZ9tfKG4XH/tbqVW87VzK3kRbQkENwmcsycpbJ7oO6VE5eVJuycAou+pmA7kA70TpyglmfH3oFPhNOStZSGpGk7Q5bth63gKEND16WGWnYnumMbb8iiaoveXDAkAz1DVtsNW8FBhoYtHGeo1W68f8dh7lWlRw247YkagItVqdGlUZl28BvCGTA+Eje9XJV2Heq0aJbgYAc4iE8US7APOGhu9ulzMjsluEOV5iUty3SqUnnUzfokOEuFFpla5lUx+AIz4qm1KrWi5b82bgAk3lUnRJIiy1FFI+poRivaF+3z9aIfgxjGqL7j3r7WWrbnY/fXsRBN5Xox61SGRozXCNQCDnCBB3wQE9QMoRBEIM5SAwAAAA==') format('woff2');
+  src: url('data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAAV8AA0AAAAADWQAAAUnAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GYACDFhEICo4win0LKgABNgIkAzQEIAWCaweBURueCqOiRg9GmWT/XMimiH55cRNTiKVNlxuWG3L4chVD08HGP/CKd/Hw/Nq3c9+bmUXFknpcMSkF8YonOm1LIZGIu2Ty//k68/1k+WcFzYKzFOdN6+S2vBXUpFZS6Qae23T6yRP+VB/4///3V3V0B1oYIQ1C25YGun8FJLvP2QRW9v82UQmKWwJPZykb8z7QTVhVql/G6ZUQ8PtLc+DPijXJTx1YgFVIQlguFEjI+W+8UJI+pnvA881a4p/QmEuOKZYgXhGzUylqClxGJwQIu0Ugx2/I/osvZIENCiNYY4lsjrBlRn9mubPOuzvbqsvU/x5o3yadxn+P2pdVX/V3Vd6qO6surfyx8uvKj7KwBvHdQyYqIgORkCr8ZxQgWojaFhOu8Jx7cJF0mvQLUAACIRTmqlSSLAkhSUrKlMFPorGxnrYGSrlsLT09hqFHCAu21NV10tCL10NlGlxSPS0IRAuZRkxtsjExkl2ACi8yxnIxcc1LtAQfUdkTIjxl5I9rjUh1JfNMuzLVnqDBEFg5alAa1opdeiTPmg0ZaEJ2mWReRstaYICS8iIzgFQRp6V4ifFxpgQVI38O+IzKlJJg63bZLotLAYeEwMMJ5WLadnEX/Q+i34HYkkWZxbJgSR9HiN93h8pueZVcwLglNFvcQSvqJMSz2Styc9Rkt9h7m5Hf9a2qrqNOM3TR6sIzOnxYRYTSdMroc1RPS18ec15Vr5wIyrYJlNFKmv17n2YSBh15lnGLyrLuKEOOESkjwaPee58zcpXv/uOkxZDBNNAOhh5humlQ1N4mJbEXntERlSgJg9UIRFBSA6K/vGwRzxdUCYvKfg40NUf2DEqYP4/yML79Xl5CS8poaQlTXsqU9WfJ1tVrm4KJ7YrSAJPBrIt/kpStgkbZtnGBPQDkx2aOSECnGYc2pTaABmjg33uNe/GfkpAO+J5XJ3DvReAAICwpkF49gQcEkU/UoFrEU/FgoNioqYLjEvRD0Mmd52NI/BGPR20mWGWsqoqs5NisLNaYSrZEA6eTqeeYq51dHd/KVRSdK9yCgzHeObZdedlPv58/fH+Ul28Y2RDqRhW7hYqirxI2/eeYJz09Xk6dMfZ/68eDq6+OOhYHsvFxqalPP7McIvv5qb9NXDybljw8ndrqE5PFskZb77ZN/GbY7BenqGB78MuIW2JXrynLXdqVlLRrydlmzerYLbjFYffY6QwbLy841+mx3Q7qekSEyIwcJqjxioLLAo5w23zNMedc2LDGv0cGXOPjMenIX6kpi2GD2Xl5QIU5LYDzMwqBtMGXWS2m1+kQqH/vj+LXvRvOq4INaoOnypcPVlZYj4DA7bgOHCAAIKSkiwmUyu0jcHl5fjzOsOoGJ978zbJda+oXx/6fwxQO3AeoKQp5GpgjaaA92MZBxXEKqRaqTF/Ek/wEtnIFC0xrQSA2gK6BFVrNLT8+qF/kp6iWn80J/JI6G/yy7ACzgDN+pfke+1WyDvI863ySRTFXZMYDv2SRBX5ZZQezgCN+pVUu+FUqDbTznNCj1bh2tud4Ow8ZcDSjvtEQP3Qco7gvgU+ZiwwZ1qlfny2OOuQIN3umOXroSNXYq1VwhKlt16qvYdBGI1q17NVk0hY3NOt3R7+Uc4gnWX2u/nNuNPf/IchFkKhnXUEkKbIcBZJoEi2iTXSI7sHr+HpEnxgQQ2JEjImJVnvP5EBHsPZoX2cQaB3X1KigFHFwqCQpipPESbZLDA+BUAgDFqI4iZKICIiEKCoR') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -112,6 +113,18 @@ $icon-image: "\e90d";
 .ewg-icon-image {
   &:before {
     content: $icon-image;
+  }
+}
+
+.ewg-icon-film {
+  &:before {
+    content: $icon-film;
+  }
+}
+
+.ewg-icon-link {
+  &:before {
+    content: $icon-link;
   }
 }
 
