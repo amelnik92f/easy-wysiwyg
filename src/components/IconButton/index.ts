@@ -1,15 +1,13 @@
-import { FormatButtonMeta } from "../../types";
+import { CommonButtonProps } from "../../types";
 import styles from "./styles.module.scss";
-import { pubSub } from "../../core/communicate";
 
 const { editButton } = styles;
 
-export const FormatButton = ({
+export const IconButton = ({
   title,
-  action,
   icon,
-  event,
-}: FormatButtonMeta): HTMLButtonElement => {
+  onClick,
+}: CommonButtonProps): HTMLButtonElement => {
   const button = document.createElement("button");
 
   button.className = editButton;
@@ -22,9 +20,7 @@ export const FormatButton = ({
     button.innerText = title;
   }
 
-  button.addEventListener("click", () => {
-    pubSub.publish(event, { type: action });
-  });
+  button.addEventListener("click", onClick);
 
   return button;
 };

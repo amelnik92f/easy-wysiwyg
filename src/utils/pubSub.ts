@@ -6,17 +6,17 @@ export interface Subscription {
   unsubscribe: (event: string, index: number) => void;
 }
 
-export type UsualEvent = {
+export type UsualEvent<T> = {
   type: string;
-  payload?: any;
+  payload?: T;
 };
 
-export type SubscriberCallback = (data: UsualEvent) => void;
+export type SubscriberCallback<T = any> = (data: UsualEvent<T>) => void;
 
 export class PubSub {
   private subscribers: Subscribers = {};
 
-  public publish(event: string, data: UsualEvent): void {
+  public publish<T>(event: string, data: UsualEvent<T>): void {
     if (!this.subscribers[event]) {
       return;
     }
@@ -26,7 +26,10 @@ export class PubSub {
     );
   }
 
-  public subscribe(event: string, callback: SubscriberCallback): Subscription {
+  public subscribe<T>(
+    event: string,
+    callback: SubscriberCallback<T>
+  ): Subscription {
     if (!this.subscribers[event]) {
       this.subscribers[event] = [];
     }

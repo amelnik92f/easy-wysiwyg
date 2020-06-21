@@ -1,6 +1,7 @@
 import styles from "./styles.module.scss";
-import { eventsToSubscribe } from "../../core/communicate";
+import { formatEventsToSubscribe } from "../../core/communicate";
 import { FormatButtonWrapper } from "../FormatButtonWrapper";
+import { CreateMediaButtonWrapper } from "../CreateMediaButtonWrapper";
 
 const { actionWrapper: actionWrapperCx } = styles;
 
@@ -9,10 +10,17 @@ export const ActionWrapper = (): HTMLElement => {
 
   actionWrapper.className = actionWrapperCx;
 
-  eventsToSubscribe.forEach((event) => {
-    const container = FormatButtonWrapper(event);
-    actionWrapper.appendChild(container);
-  });
+  const formatButtonWrappers = formatEventsToSubscribe.map(FormatButtonWrapper);
+  const createButtonWrapper = CreateMediaButtonWrapper();
+  const selectElem = document.createElement("div");
+
+  selectElem.innerText = "Insert";
+
+  actionWrapper.append(
+    ...formatButtonWrappers,
+    createButtonWrapper,
+    selectElem
+  );
 
   return actionWrapper;
 };

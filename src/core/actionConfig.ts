@@ -122,10 +122,5 @@ export const createActions = {
       title: "Image",
       icon: "image",
     },
-    {
-      action: "insertImage",
-      title: "Video",
-      icon: "video",
-    },
   ],
 };

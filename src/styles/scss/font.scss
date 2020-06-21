@@ -15,7 +15,7 @@ $icon-paragraph-right: "\ea79";
 $icon-paragraph-justify: "\ea7a";
 $icon-image: "\e90d";
 $icon-link: "\e9cb";
-$icon-film: "\e913";
+$icon-video: "\e913";
 
 @font-face {
   font-family: '#{$icon-font-family}';
@@ -116,9 +116,9 @@ $icon-film: "\e913";
   }
 }
 
-.ewg-icon-film {
+.ewg-icon-video {
   &:before {
-    content: $icon-film;
+    content: $icon-video;
   }
 }
 

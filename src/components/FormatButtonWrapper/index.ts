@@ -1,7 +1,8 @@
+import { formatActions, FORMAT_EVENT, pubSub } from "../../core";
+import { IconButton } from "../IconButton";
+import { UIButtonProps } from "../../types";
+
 import styles from "./styles.module.scss";
-import { formatActions, FORMAT_EVENT } from "../../core";
-import { FormatButton } from "../FormatButton";
-import { CommonButtonProps } from "../../types";
 
 const { formatButtonWrapper } = styles;
 
@@ -10,10 +11,10 @@ export const FormatButtonWrapper = (event: FORMAT_EVENT): HTMLElement => {
 
   wrapper.className = formatButtonWrapper;
 
-  formatActions[event].forEach((data: CommonButtonProps) => {
-    const button = FormatButton({
+  formatActions[event].forEach((data: UIButtonProps) => {
+    const button = IconButton({
       ...data,
-      event: event,
+      onClick: () => pubSub.publish(event, { type: data.action }),
     });
 
     wrapper.appendChild(button);

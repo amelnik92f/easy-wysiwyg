@@ -10,8 +10,7 @@ export const createEWG = (): HTMLElement => {
 
   const editingArea = EditingArea();
 
-  mountRoot.appendChild(actionWrapper);
-  mountRoot.appendChild(editingArea);
+  mountRoot.append(actionWrapper, editingArea);
 
   setup();
 
