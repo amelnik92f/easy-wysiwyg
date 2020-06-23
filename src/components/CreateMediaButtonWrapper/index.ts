@@ -1,5 +1,6 @@
-import { pubSub, createActions, CREATE_EVENT, MODAL_EVENT } from "../../core";
+import { MODAL_EVENT, createMediaActions, FORMAT_EVENT } from "../../core";
 import { IconButton } from "../IconButton";
+import { publish } from "../../createAppEventBus";
 import { UIButtonProps } from "../../types";
 
 import styles from "./styles.module.scss";
@@ -11,15 +12,15 @@ export const CreateMediaButtonWrapper = (): HTMLElement => {
 
   wrapper.className = createButtonWrapperCx;
 
-  createActions[CREATE_EVENT.MEDIA].forEach((data: UIButtonProps) => {
+  createMediaActions.forEach((data: UIButtonProps) => {
     const button = IconButton({
       ...data,
       onClick: () =>
-        pubSub.publish(MODAL_EVENT.OPEN, {
+        publish(MODAL_EVENT.OPEN, {
           type: data.action,
           payload: {
             onSubmit: (value: string) => () => {
-              pubSub.publish(CREATE_EVENT.MEDIA, {
+              publish(FORMAT_EVENT.ELEMENT, {
                 type: data.action,
                 payload: value,
               });

@@ -1,7 +1,13 @@
-import { CREATE_EVENT, pubSub } from "../../core";
+import { FORMAT_EVENT } from "../../core";
 import styles from "./styles.module.scss";
+import { publish } from "../../createAppEventBus";
 
 const { textArea } = styles;
+
+const createParagraphEvent = {
+  type: "formatBlock",
+  payload: "p",
+};
 
 export const EditingArea = (): HTMLElement => {
   const editingArea = document.createElement("div");
@@ -15,23 +21,17 @@ export const EditingArea = (): HTMLElement => {
       const tagName = selection?.focusNode?.nodeName;
 
       if (tagName === "BLOCKQUOTE" || tagName === "PRE") {
-        pubSub.publish(CREATE_EVENT.ELEMENT, {
-          type: "formatBlock",
-          payload: "p",
-        });
+        publish(FORMAT_EVENT.ELEMENT, createParagraphEvent);
       }
 
       if (altKey) {
-        pubSub.publish(CREATE_EVENT.ELEMENT, {
+        publish(FORMAT_EVENT.ELEMENT, {
           type: "removeFormat",
         });
       }
 
       if (ctrlKey) {
-        pubSub.publish(CREATE_EVENT.ELEMENT, {
-          type: "formatBlock",
-          payload: "p",
-        });
+        publish(FORMAT_EVENT.ELEMENT, createParagraphEvent);
       }
     }
   });
