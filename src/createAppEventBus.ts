@@ -6,7 +6,9 @@ const combined = { ...formatBus, ...modalBus };
 const eventBus = new PubSub();
 
 export const createAppEventBus = (): void => {
-  Object.entries(combined).forEach(([event, handler]) =>
+  Object.entries(
+    combined
+  ).forEach(([event, handler]: [string, SubscriberCallback]) =>
     eventBus.subscribe(event, handler)
   );
 };

@@ -1,0 +1,105 @@
+.dimmer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: hsla(0, 0%, 0%, 0.2);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  min-height: 220px;
+  max-width: 500px;
+  border-radius: .5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: #fff;
+  &__header {
+    background: #cce2ff;
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    position: relative;
+  }
+  &__close {
+    font: inherit;
+    border: none;
+    background: transparent;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    &:focus {
+      box-shadow: hsl(214, 100%, 70%) 0 0 10px 0;
+      outline: none;
+    }
+    &::before, &::after {
+      content: "";
+      width: 10px;
+      display: block;
+      height: 2px;
+      position: absolute;
+      right: 5px;
+      top: 10px;
+      background: black;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  &__body {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  &__input {
+    width: 100%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    transition: .25s;
+    font: inherit;
+
+
+    &:focus {
+      box-shadow: hsl(214, 100%, 90%) 0 0 10px 0;
+      outline: none;
+    }
+
+  }
+  &__actions {
+    width: 100%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__button {
+    cursor: pointer;
+    border-radius: .25em;
+    background: transparent;
+    border: 1px solid hsl(0, 0%, 80%);
+    padding: .5em;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s;
+    font: inherit;
+    &:focus {
+      box-shadow: hsl(214, 100%, 90%) 0 0 10px 0;
+      outline: none;
+    }
+  }
+}

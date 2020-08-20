@@ -65,11 +65,13 @@ export const createMediaActions = [
     action: "createLink",
     title: "Link",
     icon: "link",
+    modalTitle: "Insert link to attach to selected text",
   },
   {
     action: "insertImage",
     title: "Image",
     icon: "image",
+    modalTitle: "Insert link for image to create",
   },
 ];
 
