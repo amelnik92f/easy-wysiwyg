@@ -1,8 +1,8 @@
 import { FormatButtonWrapper } from "../FormatButtonWrapper";
-import { CreateMediaButtonWrapper } from "../CreateMediaButtonWrapper";
 import { formatAlignActions, formatTextActions } from "../../core";
 
 import styles from "./styles.module.scss";
+import { CreateTextButtonWrapper } from "../CreateTextButtonWrapper";
 
 const { actionWrapper: actionWrapperCx } = styles;
 
@@ -14,16 +14,9 @@ export const ActionWrapper = (): HTMLElement => {
   actionWrapper.className = actionWrapperCx;
 
   const formatButtonWrappers = actionsToSubscribe.map(FormatButtonWrapper);
-  const createButtonWrapper = CreateMediaButtonWrapper();
-  const selectElem = document.createElement("div");
+  const textButtonWrapper = CreateTextButtonWrapper();
 
-  selectElem.innerText = "Insert";
-
-  actionWrapper.append(
-    ...formatButtonWrappers,
-    createButtonWrapper,
-    selectElem
-  );
+  actionWrapper.append(...formatButtonWrappers, textButtonWrapper);
 
   return actionWrapper;
 };

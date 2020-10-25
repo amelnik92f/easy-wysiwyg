@@ -108,17 +108,12 @@ export const createTextActions = [
   },
   {
     action: "formatBlock",
-    title: "p",
-    value: "p",
-  },
-  {
-    action: "formatBlock",
-    title: "Quote",
+    title: '" "',
     value: "blockquote",
   },
   {
     action: "formatBlock",
-    title: "Code",
+    title: "</>",
     value: "pre",
   },
 ];

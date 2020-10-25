@@ -1,7 +1,7 @@
 export type UIButtonProps = {
   title: string;
   action: string;
-  icon: string;
+  icon?: string;
 };
 
 export interface CommonButtonProps extends UIButtonProps {

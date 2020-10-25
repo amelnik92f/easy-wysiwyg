@@ -13,8 +13,6 @@ const {
   modal__button,
 } = styles;
 
-console.log(styles);
-
 export const Modal = ({
   title,
   onSubmit,
@@ -56,8 +54,7 @@ export const Modal = ({
 
   close?.addEventListener("click", onClose);
   modalWrapper?.addEventListener("click", ({ target }: MouseEvent) => {
-    // @ts-ignore
-    if (target.id === DIMMER) {
+    if ((target as HTMLElement).id === DIMMER) {
       onClose();
     }
   });
